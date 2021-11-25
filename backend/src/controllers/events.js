@@ -20,6 +20,7 @@ async function getEventbyDate(req, res) {
 		const response = await DBquery.getEventsForSpecificDate(startDate, getEndDate);
 		return successResponse(res, 200, response);
 	} catch (error) {
+		console.log(error)
 		return errorHelper(res, 500, error);
 	}
 }
