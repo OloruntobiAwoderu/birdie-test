@@ -6,7 +6,7 @@ function getAll() {
 
 function getEventsForSpecificDate(startDate, endDate, id) {
 	return db("events")
-		.where("care_recipient_id", "df50cac5-293c-490d-a06c-ee26796f850d")
+		.where("care_recipient_id", id)
 		.whereBetween("timestamp", [startDate, endDate])
 		.select("payload")
 		.orderBy("timestamp", "asc");
