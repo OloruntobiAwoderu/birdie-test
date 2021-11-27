@@ -8,7 +8,8 @@ async function validateDateorId(req, res, next) {
 		await schema.validateAsync({ date, id });
 		next();
 	} catch (error) {
-		return errorHelper(res, 500, error.details[0].message);
+		console.log(error)
+		return errorHelper(res, 400, error.details[0].message);
 	}
 }
 

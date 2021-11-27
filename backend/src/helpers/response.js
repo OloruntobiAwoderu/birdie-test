@@ -1,11 +1,13 @@
-const successResponse = (res, status, data) => {
-	return res.status(status).json(data);
-};
+const successResponse = (res, status, message, data) => {
+    const response = { status:true, message, data}
+    return res.status(status).json(response)
+}
 
-const errorHelper = (res, status, error) => {
-	return res.status(status).json(error);
-};
-
+const errorHelper = (res, status, message) => {
+	if(!message) message = "Oops, and error occured"
+    const response = { status:false, message }
+    return res.status(status).json(response)
+}
 const manipulateDate = (date) => {
 	const endDate = new Date(date);
 	const startDate = new Date(date).toISOString().substring(0, 10);

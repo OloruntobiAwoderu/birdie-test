@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "node index",
 		"start:dev": "nodemon index",
-		"test": "cross-env NODE_ENV=test jest --forceExit --runInBand --verbose",
+		"test": "jest --forceExit --runInBand --verbose --testTimeout=30000",
 		"coverage": "jest --coverage"
 	},
 	"author": "",
@@ -16,12 +16,14 @@
 		"dotenv": "^10.0.0",
 		"express": "^4.17.1",
 		"helmet": "^4.6.0",
+		"jest": "^27.3.1",
 		"joi": "^17.4.2",
 		"knex": "^0.95.14",
 		"morgan": "^1.10.0",
 		"mysql": "^2.18.1",
 		"mysql2": "^2.3.3",
-		"nodemon": "^2.0.15"
+		"nodemon": "^2.0.15",
+		"supertest": "^6.1.6"
 	},
 	"devDependencies": {
 		"eslint": "^8.3.0"

@@ -1,3 +1,4 @@
+const { cos } = require("prelude-ls");
 const DBquery = require("../database/queries.js");
 const {
 	successResponse,
@@ -8,9 +9,9 @@ const {
 async function getAllEvents(req, res) {
 	try {
 		const response = await DBquery.getAll();
-		return successResponse(res, 200, response);
+		return successResponse(res, 200, "Items successfully fetched", response);
 	} catch (error) {
-		return errorHelper(res, 500, error);
+		return errorHelper(res, 500);
 	}
 }
 
@@ -25,10 +26,11 @@ async function getEventbyDate(req, res) {
 			manipulatedDate.getEndDate,
 			id
 		);
-		return successResponse(res, 200, response);
+		if (response.length > 0) return successResponse(res, 200, "Items successfully fetched", response);
+		return successResponse(res, 404, "Events for this date do not exist");
 	} catch (error) {
 		console.log(error);
-		return errorHelper(res, 500, error);
+		return errorHelper(res, 500);
 	}
 }
 
@@ -42,9 +44,11 @@ async function getEventsbyDateAndId(req, res) {
 			manipulatedDate.getEndDate,
 			id
 		);
-		return successResponse(res, 200, response);
+		if (response.length > 0) return successResponse(res, 200, "Items successfully fetched", response);
+		return successResponse(res, 404, "Events for this date/ID do not exist");
 	} catch (error) {
-		return errorHelper(res, 500, error);
+		console.log(error)
+		return errorHelper(res, 500);
 	}
 }
 

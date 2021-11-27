@@ -11,7 +11,7 @@ module.exports = {
 			user: USERDB,
 			password: PASSWORD,
 			database: DB,
-			debug: true
+			debug: false
 		},
 	},
 
