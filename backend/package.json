@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "node index",
 		"start:dev": "nodemon index",
-		"test": "jest --forceExit --runInBand --verbose --testTimeout=30000",
+		"test": "jest --forceExit --runInBand --verbose --testTimeout=30000 --coverage",
 		"coverage": "jest --coverage"
 	},
 	"author": "",
