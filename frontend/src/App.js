@@ -53,7 +53,7 @@ const App = () => {
 					</div>
 				)  : (
 					<Router>
-						<Sidebar dateChange={dateChange} />
+						<Sidebar dateChange={dateChange} date={date} />
 						<Routes>
 							<Route path="/" element={<TopCard events={events} />} />
 							<Route

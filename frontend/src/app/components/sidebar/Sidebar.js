@@ -7,7 +7,7 @@ import { SidebarData } from "./SidebarData";
 import React, { useState } from "react";
 import "./Sidebar.css";
 
-const Sidebar = ({ dateChange }) => {
+const Sidebar = ({ dateChange, date }) => {
 	const [sidebar, setSidebar] = useState(false);
 	const showSidebar = () => setSidebar(!sidebar);
 	return (
@@ -23,7 +23,7 @@ const Sidebar = ({ dateChange }) => {
 							name="date-picker"
 							className="date-picker"
 							type="date"
-							value={dateChange}
+							value={date}
 							onChange={dateChange}
 						/>
 					</label>
