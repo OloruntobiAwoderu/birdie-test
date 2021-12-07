@@ -75,7 +75,7 @@ const ParentDiv = styled.div`
 	border-radius: 8px;
 	margin-left: 20px;
 	padding-left: 20px;
-	padding-bottom: 105px;
+	padding-bottom: 75px;
 	padding-right: 20px;
 	margin-right: 10px;
 	@media  (max-width: 768px) {
