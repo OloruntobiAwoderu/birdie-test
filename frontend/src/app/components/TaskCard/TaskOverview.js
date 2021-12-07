@@ -125,7 +125,7 @@ const TaskOverview = ({ events }) => {
 					</ProgressMain>
 				</Progress>
 				<Timestamp>
-					{/* {dayjs(events?.data[0].timestamp).format("dddd, MMMM D, YYYY")} */}
+					{dayjs(events?.data[0].timestamp).format("dddd, MMMM D, YYYY")}
 				</Timestamp>
 				<hr />
 				<TaskCardDiv>
