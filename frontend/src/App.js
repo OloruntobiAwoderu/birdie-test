@@ -31,36 +31,40 @@ const App = () => {
 	};
 
 	return (
-		<div>
-			{isLoading ? (
-				<div className="App">
-					<h1>Loading.................</h1>
-				</div>
-			) : events.message === "Events for this date do not exist" ? (
-				<div className="App">
-					<div>
-						<h2>There are no events for this date</h2>
+		(
+			<div>
+				{isLoading ? (
+					<div className="App">
+						<h1>Loading.................</h1>
 					</div>
-					<div className="App-body">
-						<div className="App-body-content">
-							<p>Please select another date to view the events for that date</p>
-							<input type="date" onChange={dateChange} />
+				) : events.message === "Events for this date do not exist" ? (
+					<div className="App">
+						<div>
+							<h2>There are no events for this date</h2>
+						</div>
+						<div className="App-body">
+							<div className="App-body-content">
+								<p>
+									Please select another date to view the events for that date
+								</p>
+								<input type="date" onChange={dateChange} />
+							</div>
 						</div>
 					</div>
-				</div>
-			) : (
-				<Router>
-					<Sidebar dateChange={dateChange} />
-					<Routes>
-						<Route path="/" element={<TopCard events={events} />} />
-						<Route
-							path="/timeline"
-							element={<EventsTimeline events={events} />}
-						/>
-					</Routes>
-				</Router>
-			)}
-		</div>
+				)  : (
+					<Router>
+						<Sidebar dateChange={dateChange} />
+						<Routes>
+							<Route path="/" element={<TopCard events={events} />} />
+							<Route
+								path="/timeline"
+								element={<EventsTimeline events={events} />}
+							/>
+						</Routes>
+					</Router>
+				)}
+			</div>
+		)
 	);
 };
 

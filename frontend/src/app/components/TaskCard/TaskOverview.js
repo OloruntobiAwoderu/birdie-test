@@ -110,7 +110,6 @@ const TaskOverview = ({ events }) => {
 		} 
 		return null;
 	});
-	console.log(events);
 	return (
 		<BackgroundDiv>
 			<ParentDiv>
@@ -126,7 +125,7 @@ const TaskOverview = ({ events }) => {
 					</ProgressMain>
 				</Progress>
 				<Timestamp>
-					{/* {dayjs(events?.data[0].timestamp).format("dddd, MMMM D, YYYY")} */}
+					{dayjs(events?.data[0].timestamp).format("dddd, MMMM D, YYYY")}
 				</Timestamp>
 				<hr />
 				<TaskCardDiv>
