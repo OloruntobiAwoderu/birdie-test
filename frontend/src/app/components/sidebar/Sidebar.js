@@ -23,6 +23,7 @@ const Sidebar = ({ dateChange }) => {
 							name="date-picker"
 							className="date-picker"
 							type="date"
+							value={dateChange}
 							onChange={dateChange}
 						/>
 					</label>
