@@ -47,7 +47,7 @@ const App = () => {
 								<p>
 									Please select another date to view the events for that date
 								</p>
-								<input type="date" onChange={dateChange} />
+								<input type="date" value={date} onChange={dateChange} />
 							</div>
 						</div>
 					</div>
