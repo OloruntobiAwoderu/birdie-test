@@ -9,7 +9,10 @@ const {
 async function getAllEvents(req, res) {
 	try {
 		const response = await DBquery.getAll();
-		return successResponse(res, 200, "Items successfully fetched", response);
+		const events = response.map((r) =>
+        JSON.parse(r.payload)
+      );
+		return successResponse(res, 200, "Items successfully fetched", events);
 	} catch (error) {
 		return errorHelper(res, 500);
 	}
@@ -26,9 +29,14 @@ async function getEventbyDate(req, res) {
 			manipulatedDate.getEndDate,
 			id
 		);
-		if (response.length > 0) return successResponse(res, 200, "Items successfully fetched", response);
+		const events = response.map((event) =>
+        JSON.parse(event.payload)
+      );
+		if (response.length > 0) return successResponse(res, 200, "Items successfully fetched", events);
+		
 		return successResponse(res, 404, "Events for this date do not exist");
 	} catch (error) {
+		console.log(error)
 		return errorHelper(res, 500);
 	}
 }
@@ -43,7 +51,10 @@ async function getEventsbyDateAndId(req, res) {
 			manipulatedDate.getEndDate,
 			id
 		);
-		if (response.length > 0) return successResponse(res, 200, "Items successfully fetched", response);
+		const events = response.map((event) =>
+        JSON.parse(event.payload)
+      );
+		if (response.length > 0) return successResponse(res, 200, "Items successfully fetched", events);
 		return successResponse(res, 404, "Events for this date/ID do not exist");
 	} catch (error) {
 		return errorHelper(res, 500);
