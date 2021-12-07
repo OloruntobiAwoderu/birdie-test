@@ -36,7 +36,6 @@ async function getEventbyDate(req, res) {
 		
 		return successResponse(res, 404, "Events for this date do not exist");
 	} catch (error) {
-		console.log(error)
 		return errorHelper(res, 500);
 	}
 }

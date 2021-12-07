@@ -1,7 +1,6 @@
 import TaskCard from "./TaskCard";
 
 const TaskCards = ({ events }) => {
-	console.log(events)
 	return (
 		<div>
 			{events?.data?.map((event) => {
