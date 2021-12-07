@@ -5,7 +5,6 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node index",
-		"heroku-postbuild": "cd client && npm install && npm run build",
 		"start:dev": "nodemon index",
 		"test": "jest --forceExit --runInBand --verbose --testTimeout=30000 --coverage",
 		"coverage": "jest --coverage"

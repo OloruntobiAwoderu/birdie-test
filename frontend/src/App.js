@@ -21,7 +21,7 @@ const App = () => {
 
 	const fetchEvents = async () => {
 		const res = await fetch(
-			`http://localhost:8000/api/v1/events/date?date=:${date}`
+			`/api/v1/events/date?date=:${date}`
 		);
 		const data = await res.json();
 		return data;
