@@ -8,8 +8,9 @@ import 'react-vertical-timeline-component/style.min.css';
 
 const TimelineContainer = styled.div`
   height: 65%;
-  width: 85%;
+  width: 100%;
   position: relative;
+  Background: #f5f5f5;
 `;
 
 export const EventsTimeline = ({ events }) => {

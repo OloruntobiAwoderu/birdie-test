@@ -105,7 +105,7 @@ Here's the technical stack this boilerplate was made with:
    b. Run the HTTP server (will start on port `8000`)
 
    ```bash
-   npm run dev
+   npm run start:dev
    ```
 
 2. Start the React app  (Run the following commands within the `front-end` folder)
@@ -116,8 +116,11 @@ Here's the technical stack this boilerplate was made with:
    npm install
    ```
 
-   b. Run the application (will start on port `3000`)
+   b. Run the application 
 
    ```bash
-   npm start
+   npm run build
    ```
+
+   Then naviagate to the port on your browser 
+   e.g if you are runnning your bvackend on port:8000 - go to loalhost:8000 on your browser
